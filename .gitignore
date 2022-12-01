@@ -8,7 +8,14 @@ bin-release/
 .settings/
 wp-admin
 wp-includes
-wp-content
+wp-content/plugins
+wp-content/upgrade
+wp-content/uploads
+wp-content/index
+wp-content/themes/twentytwentyone
+wp-content/themes/twentytwentytwo
+wp-content/themes/twentytwentythree
+wp-content/themes/index
 
 # Executables
 *.swf
