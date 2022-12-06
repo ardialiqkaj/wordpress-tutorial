@@ -8,7 +8,7 @@ get_header(); ?>
 <?php
 
 $args_cat = array(
-    'include' => '8, 10'
+    'include' => '5, 4'
 );
 
 $categories = get_categories($args_cat);
@@ -18,7 +18,7 @@ foreach ($categories as $category) :
         'type' => 'post',
         'posts_per_page' => 1,
         'category__in' => $category->term_id,
-        'category__not_in' => array(9)
+        'category__not_in' => array(6)
     );
 
     $lastBlog = new WP_Query($args);
