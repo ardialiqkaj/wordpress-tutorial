@@ -23,7 +23,8 @@ if (is_front_page()) {
             array(
                 'theme_location' => 'primary',
                 'container' => false,
-                'menu_class' => 'ardi-navigation'
+                'menu_class' => 'ardi-navigation',
+                'walker' => new Walker_Nav_Primary()
             )
         );
         ?>
