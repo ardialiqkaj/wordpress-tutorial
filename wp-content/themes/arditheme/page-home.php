@@ -3,40 +3,42 @@
 use function PHPSTORM_META\type;
 
 get_header(); ?>
+<div class="ardi-homepage">
+    <div class="ardi-articles">
+        <?php
 
+        $args_cat = array(
+            'include' => '5, 4'
+        );
 
-<?php
+        $categories = get_categories($args_cat);
 
-$args_cat = array(
-    'include' => '5, 4'
-);
+        foreach ($categories as $category) :
+            $args = array(
+                'type' => 'post',
+                'posts_per_page' => 1,
+                'category__in' => $category->term_id,
+                'category__not_in' => array(6)
+            );
 
-$categories = get_categories($args_cat);
+            $lastBlog = new WP_Query($args);
 
-foreach ($categories as $category) :
-    $args = array(
-        'type' => 'post',
-        'posts_per_page' => 1,
-        'category__in' => $category->term_id,
-        'category__not_in' => array(6)
-    );
+            if ($lastBlog->have_posts()) {
 
-    $lastBlog = new WP_Query($args);
+                while ($lastBlog->have_posts()) : $lastBlog->the_post();
+                    get_template_part('content', get_post_format());
 
-    if ($lastBlog->have_posts()) {
+                endwhile;
+            }
 
-        while ($lastBlog->have_posts()) : $lastBlog->the_post();
-            get_template_part('content', get_post_format());
+            wp_reset_postdata();
 
-        endwhile;
-    }
+        endforeach;
 
-    wp_reset_postdata();
-
-endforeach;
-
-?>
-
+        ?>
+    </div>
+    <?php get_sidebar(); ?>
+</div>
 <?php if (have_posts()) {
 
     while (have_posts()) : the_post(); ?>
@@ -79,5 +81,4 @@ wp_reset_postdata();*/
 ?>
 <!--<hr>-->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

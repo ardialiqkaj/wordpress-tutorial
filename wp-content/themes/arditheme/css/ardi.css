@@ -5,6 +5,96 @@ body {
     font-family: sans-serif;
 }
 
-body {
-    padding: 20px;
+#menu-main-navigation {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    height: 50px;
+    align-items: center;
+    background: #ddd;
+}
+
+ul#menu-main-navigation  {
+    margin: 0;
+}
+
+#menu-main-navigation li {
+    list-style: none;
+    width: 20%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#menu-main-navigation a:link {
+    text-decoration: none;
+    color: #000;
+}
+
+#menu-main-navigation a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+#menu-main-navigation a:hover {
+    text-decoration: none;
+    color: #888;
+}
+
+#menu-main-navigation a:active {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.ardi-homepage {
+    display: flex;
+}
+
+.ardi-articles {
+    flex: 3;
+    display: flex;
+}
+
+.ardi-articles .post,
+.ardi-articles .blog-item {
+    flex: 1;
+    margin: 10px;
+    padding: 8px;
+    background: #888;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.widgets-area {
+    flex: 1;
+}
+
+.form-control {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+}
+
+#menu-footer-navigation li {
+    list-style: none;
+}
+
+#menu-footer-navigation a:link {
+    text-decoration: none;
+}
+
+#menu-footer-navigation a:visited {
+    text-decoration: none;
+}
+
+#menu-footer-navigation a:hover {
+    text-decoration: none;
+}
+
+#menu-footer-navigation a:active {
+    text-decoration: none;
+}
+
+footer ul {
+    margin: 0;
 }
