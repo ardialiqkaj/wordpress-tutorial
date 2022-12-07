@@ -9,7 +9,7 @@
 
 
 <?php
-if (is_home()) {
+if (is_front_page()) {
     $ardi_classes = array('ardi-class', 'my-class');
 } else {
     $ardi_classes = array('no-ardi-class');
@@ -17,8 +17,17 @@ if (is_home()) {
 ?>
 
 <body <?php body_class($ardi_classes); ?>>
-
-    <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+    <div class="ardi-menu-header">
+        <?php
+        wp_nav_menu(
+            array(
+                'theme_location' => 'primary',
+                'container' => false,
+                'menu_class' => 'ardi-navigation'
+            )
+        );
+        ?>
+    </div>
 
     <?php get_search_form(); ?>
 
