@@ -56,3 +56,9 @@ add_action('widgets_init', 'ardi_widget_setup');
 */
 
 require get_template_directory() . './inc/walker.php';
+
+function ardi_remove_version()
+{
+    return '';
+}
+add_filter('the_generator', 'ardi_remove_version');
