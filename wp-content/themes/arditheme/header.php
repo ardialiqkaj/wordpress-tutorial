@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>WordPress First Theme Project</title>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <title><?php bloginfo('name'); ?><?php wp_title('|'); ?></title>
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <?php wp_head(); ?>
 </head>
 
